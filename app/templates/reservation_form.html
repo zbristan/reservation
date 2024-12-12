@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Make a Reservation</h1>
+<form method="POST" action="{{ url_for('main.reserve') }}">
+    {{ form.hidden_tag() }}
+    <div>
+        {{ form.name.label }}
+        {{ form.name() }}
+    </div>
+    <div>
+        {{ form.email.label }}
+        {{ form.email() }}
+    </div>
+    <div>
+        {{ form.date.label }}
+        {{ form.date() }}
+    </div>
+    <div>
+        {{ form.time.label }}
+        {{ form.time() }}
+    </div>
+    <div>
+        {{ form.party_size.label }}
+        {{ form.party_size() }}
+    </div>
+    <div>
+        {{ form.submit() }}
+    </div>
+</form>
+{% endblock %}
